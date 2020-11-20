@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,16 +13,13 @@ public class Main {
         if (bool) System.out.println("this is true");
         else System.out.println("this is false");
         System.out.println("LETS USING INTELEJJJJJJJJJJJJJ IDE NOW");
-
 //        printConversion(25.42);
-
 //        printMegaBytesAndKiloBytes(-10);
-
-        System.out.println(isLeapYear(1924));
-
+//        double result = area(5.0);
+//        double result2 = area(5.0,4.0);
+//        System.out.println(result + "\n" + result2);
+        printYearsAndDays(561600);
     }
-
-
 
 
     public static Long toMilesPerHour(double kilometersPerHour){
@@ -76,5 +75,54 @@ public class Main {
             }else return false;
         }else return false;
     }
+
+    public static double area(double radius){
+        if(radius<0){
+            return -1.0;
+        }else {
+            return radius * radius * Math.PI;
+        }
+    }
+
+    public static double area(double x, double y){
+        if(x<0 || y<0){
+            return -1.0;
+        }else{
+            return x*y;
+        }
+    }
+
+    public static void printYearsAndDays(long minutes){
+        if(minutes<0){
+            System.out.println("Invalid value");
+        }else{
+            long years = minutes/525600;
+            long days = (minutes%525600)/1440;
+            System.out.println(minutes+" min = "+years+" y and "+days+" d");
+        }
+    }
+
+    public static void printEqual(int num, int num2, int num3){
+        if(num<0||num2<0||num3<0){
+            System.out.println("Invalid value");
+        }else if(num==num2&&num==num3&&num2==num3){
+            System.out.println("All numbers are equal");
+        }else if(num!=num2&&num!=num3&&num2!=num3){
+            System.out.println("All numbers are different");
+        }else{
+            System.out.println("Neither all are equal or different");
+        }
+    }
+
+    public static boolean isCatPlaying(boolean summer, int temp){
+        if(summer==false){
+            if(temp>=25 && temp<=35) return true;
+            else return false;
+        }else{
+            if(temp>=25&&temp<=45) return true;
+            else return false;
+        }
+    }
+
 
 }
